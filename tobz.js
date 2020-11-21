@@ -2191,6 +2191,11 @@ Menunggu video...`
             }
             tobz.reply(from, 'Succes kick all member', id)
             break
+        case '#revlinkgroup':
+			if (!isGroupMsg) return tobz.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
+				tobz.revokeGroupInviteLink(chat.id);
+				tobz.reply(from, 'Tautan undangan berhasil di tarik', id)
+            break
         case '#kickall':
             if (!isGroupMsg) return tobz.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             const isGroupOwner = sender.id === chat.groupMetadata.owner
